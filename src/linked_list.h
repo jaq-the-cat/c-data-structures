@@ -25,7 +25,7 @@ LinkedList linked_list() {
 LLNode* make_node(int data) {
     LLNode *node = (LLNode*) malloc(sizeof(LLNode));
     node->data = (int*) malloc(sizeof(int));
-    *node->data = data;
+    *(node->data) = data;
     node->next = NULL;
     return node;
 }

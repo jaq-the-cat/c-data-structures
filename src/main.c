@@ -9,7 +9,8 @@ void t_vector() {
         push(&v, i);
     print_vec(&v);
     /*print_vec_addr(&v);*/
-    delete_vec(&v);
+    free(v.array);
+    /*delete_vec(&v);*/
 }
 
 void t_linked_list() {
