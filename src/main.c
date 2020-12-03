@@ -10,6 +10,8 @@ void t_circular_linked_list() {
     add_to_c_list(&list, 15);
     /*add_to_c_list(&list, 20);*/
     print_c_list(&list);
+    
+    printf("%d %d %d", *(list.tail->next->data), *(list.tail->next->next->data), *(list.tail->data));
 }
 
 void t_binary_tree() {

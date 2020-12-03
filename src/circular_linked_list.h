@@ -38,7 +38,7 @@ void add_to_c_list(CLinkedList *list, int data) {
     }
     else {
         CLLNode *head = list->tail->next;
-        list->tail->next= make_c_node(data);
+        list->tail->next = make_c_node(data);
         list->tail->next->next = head;
         list->tail = list->tail->next;
     }
