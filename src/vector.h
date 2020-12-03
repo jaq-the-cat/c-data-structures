@@ -43,11 +43,12 @@ int get(const Vector *v, const int i) {
 
 void _fix(Vector *v) {
     if (v->length >= v->allocated) {
-        int *na = (int*) malloc(sizeof(int)*v->allocated+EXTRA_SIZE);
-        for (int i=0; i<v->length; i++)
-            na[i] = v->array[i];
-        free(v->array);
-        v->array = na;
+        v->array = (int*) realloc(v->array, sizeof(int)*(v->allocated+EXTRA_SIZE));
+        //int *na = (int*) malloc(sizeof(int)*v->allocated+EXTRA_SIZE);
+        //for (int i=0; i<v->length; i++)
+            //na[i] = v->array[i];
+        //free(v->array);
+        //v->array = na;
     }
 }
 

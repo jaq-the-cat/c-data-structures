@@ -2,7 +2,7 @@
 #include "vector.h"
 
 void t_vector() {
-    Vector v  = vector(10);
+    Vector v  = vector(2);
     push(&v, 0);
     rm(&v, 0);
     push(&v, 1);
