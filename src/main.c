@@ -7,6 +7,8 @@ void t_vector() {
     rm(&v, 0);
     push(&v, 1);
     push(&v, 2);
+    push(&v, 3);
+    push(&v, 4);
     print_vec(&v);
     print_vec_addr(&v);
     delete_vec(&v);
