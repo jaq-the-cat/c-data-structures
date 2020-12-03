@@ -3,9 +3,9 @@
 
 void t_vector() {
     Vector v  = vector(3);
-    set_at(&v, 0, 1);
-    set_at(&v, 1, 2);
-    set_at(&v, 2, 3);
+    push(&v, 1);
+    push(&v, 2);
+    push(&v, 3);
     print_vec(&v);
 }
 
