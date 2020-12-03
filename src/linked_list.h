@@ -48,21 +48,24 @@ void remove_first(LinkedList *list) {
     list->head = list->head->next;
 }
 
-void remove_node(LLNode *previous) {
+void remove_node_after(LLNode *previous) {
     free(previous->next->data);
     free(previous->next);
     previous->next = previous->next->next;
 }
 
-void _remove_from_list(LinkedList *list, int i, int c) {
-
-    c++;
+void _remove_from_list(LLNode *node, int i, int c) {
+    if (i-1 == c) {
+        remove_node_after(node);
+    } else {
+        _remove_from_list(node->next, i, c+1);
+    }
 }
 
 void remove_from_list(LinkedList *list, int i) {
     if (list->len == 0) return;
     if (list->len == 1 || i == 0) remove_first(list);
-    else _remove_from_list(list, i, 0);
+    else _remove_from_list(list->head, i, 0);
 }
 
 void print_list(LinkedList *list) {
