@@ -52,9 +52,10 @@ void push(Vector *v, const int d) {
 }
 
 void print_vec(const Vector *v) {
-    printf("[ ");
-    for (int i=0; i<v->length; i++)
-        printf("%d ", v->array[i]);
+    printf("[");
+    for (int i=0; i<v->length-1; i++)
+        printf("%d, ", v->array[i]);
+    printf("%d", v->array[v->length-1]);
     printf("]\n");
 }
 
