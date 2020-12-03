@@ -29,6 +29,10 @@ void set(Vector *v, const int i, const int d) {
         v->array[i] = d;
 }
 
+void rm(Vector *v, const int i) {
+    v->length--;
+}
+
 int get(Vector *v, const int i) {
     return v->array[i];
 }
@@ -42,7 +46,7 @@ void push(Vector *v, const int d) {
         v->array = na;
     }
     v->array[v->length] = d;
-    v->length += 1;
+    v->length++;
 }
 
 void print_vec(const Vector *v) {
