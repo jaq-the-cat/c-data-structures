@@ -52,7 +52,7 @@ void insert(Vector *v, int i, int d) {
 
 }
 
-void push(Vector *v, const int d) {
+void push(Vector *v, int d) {
     _fix(v);
     v->array[v->length] = d;
     v->length++;
