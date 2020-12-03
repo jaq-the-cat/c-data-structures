@@ -28,12 +28,15 @@ void add_to_list(LinkedList *list, int data) {
     node = (LLNode*) malloc(sizeof(LLNode));
     node->data = (int*) malloc(sizeof(data));
     node->next = NULL;
+    list->len += 1;
 }
 
 void print_list(LinkedList *list) {
-    LLNode *node;
-    for (node = list->head; node != NULL; node = node->next)
-        printf("%d", node->data);
+    if (list->len > 0) {
+        LLNode *node;
+        for (node = list->head; node != NULL; node = node->next)
+            printf("%d", *node->data);
+    }
 }
 
 void _delete_node(LLNode *node) {

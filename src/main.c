@@ -6,5 +6,6 @@ int main() {
     add_to_list(&list, 10);
     add_to_list(&list, 15);
     add_to_list(&list, 20);
+    print_list(&list);
     return 0;
 }
