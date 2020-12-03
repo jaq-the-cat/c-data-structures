@@ -25,6 +25,7 @@ LinkedList linked_list() {
 LLNode* make_node(int data) {
     LLNode *node = (LLNode*) malloc(sizeof(LLNode));
     node->data = (int*) malloc(sizeof(data));
+    *node->data = data;
     node->next = NULL;
     return node;
 }
@@ -45,7 +46,7 @@ void print_list(LinkedList *list) {
     if (list->len > 0) {
         LLNode *node;
         for (node = list->head; node != NULL; node = node->next)
-            printf("%d\n", *(node->data));
+            printf("%d\n", *node->data);
     }
 }
 
