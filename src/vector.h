@@ -30,6 +30,8 @@ void set(Vector *v, const int i, const int d) {
 }
 
 void rm(Vector *v, const int i) {
+    for (int j=i; j<v->length-1; j++)
+        v->array[j] = v->array[j+1];
     v->length--;
 }
 
