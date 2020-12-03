@@ -24,9 +24,13 @@ Vector vector(const int initial_length) {
     return v;
 }
 
-void set_at(Vector *v, const int i, const int d) {
+void set(Vector *v, const int i, const int d) {
     if (i < v->length)
         v->array[i] = d;
+}
+
+int get(Vector *v, const int i) {
+    return v->array[i];
 }
 
 void push(Vector *v, const int d) {
