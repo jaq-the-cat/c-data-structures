@@ -8,6 +8,7 @@ void t_vector() {
     push(&v, 1);
     push(&v, 2);
     print_vec(&v);
+    delete_vec(&v);
 }
 
 void t_linked_list() {
