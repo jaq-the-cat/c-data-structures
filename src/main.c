@@ -2,6 +2,7 @@
 #include "vector.h"
 
 void t_vector() {
+    Vector v  = vector(10);
 }
 
 void t_linked_list() {
@@ -32,5 +33,6 @@ void t_linked_list() {
 }
 
 int main() {
+    t_vector();
     return 0;
 }
