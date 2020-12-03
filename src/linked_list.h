@@ -22,12 +22,19 @@ LinkedList linked_list() {
     return list;
 }
 
-void add_to_list(LinkedList *list, int data) {
-    LLNode *node;
-    for (node = list->head; node != NULL; node = node->next); // move to last node
-    node = (LLNode*) malloc(sizeof(LLNode));
+LLNode* make_node(int data) {
+    LLNode *node = (LLNode*) malloc(sizeof(LLNode));
     node->data = (int*) malloc(sizeof(data));
     node->next = NULL;
+    return node;
+}
+
+void add_to_list(LinkedList *list, int data) {
+    // empty list
+    if (list->len == 0)
+        list->head = make_node(data);
+    LLNode *node;
+    for (node = list->head; node->next != NULL; node = node->next) // move to last node
     list->len += 1;
 }
 
