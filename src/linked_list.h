@@ -49,7 +49,6 @@ void remove_first(LinkedList *list) {
 
 void remove_node_after(LLNode *previous) {
     free(previous->next->data);
-    free(previous->next);
     previous->next = previous->next->next;
 }
 
