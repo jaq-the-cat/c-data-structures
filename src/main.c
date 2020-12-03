@@ -41,5 +41,6 @@ void t_linked_list() {
 
 int main() {
     t_vector();
+    t_linked_list();
     return 0;
 }

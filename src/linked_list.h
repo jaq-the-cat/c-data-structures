@@ -24,27 +24,22 @@ LinkedList linked_list() {
 
 LLNode* make_node(int data) {
     LLNode *node = (LLNode*) malloc(sizeof(LLNode));
-    if (node != NULL) {
-        node->data = (int*) malloc(sizeof(int));
-        *node->data = data;
-        node->next = NULL;
-    }
+    node->data = (int*) malloc(sizeof(int));
+    *node->data = data;
+    node->next = NULL;
     return node;
 }
 
 void add_to_list(LinkedList *list, int data) {
     // empty list
-    if (list->len == 0) {
+    if (list->len == 0)
         list->head = make_node(data);
-        list->len += 1;
-    }
     else {
         LLNode *node;
         for (node = list->head; node->next != NULL; node = node->next); // move to last node
         node->next = make_node(data);
-        if (node->next != NULL)
-            list->len += 1;
     }
+    list->len += 1;
 }
 
 void remove_first(LinkedList *list) {
