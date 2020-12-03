@@ -42,7 +42,7 @@ void add_to_c_list(CLinkedList *list, int data) {
     list->len += 1;
 }
 
-void print_list(CLinkedList *list) {
+void print_c_list(CLinkedList *list) {
     if (list->len > 0) {
         CLLNode *node;
         for (node = list->head; node != NULL; node = node->next)
@@ -50,16 +50,16 @@ void print_list(CLinkedList *list) {
     }
 }
 
-void _delete_node(CLLNode *node) {
+void _delete_c_node(CLLNode *node) {
     if (node->next != NULL)
-        _delete_node(node->next);
+        _delete_c_node(node->next);
     node->next = NULL;
     free(node->data);
     free(node);
 }
 
-void delete_list(CLinkedList *list) {
-    _delete_node(list->head);
+void delete_c_list(CLinkedList *list) {
+    _delete_c_node(list->head);
     list->len = 0;
 }
 
