@@ -24,12 +24,12 @@ Vector vector(const int initial_length) {
     return v;
 }
 
-void set(Vector *v, const int i, const int d) {
+void set(Vector *v, int i, int d) {
     if (i >= 0 && i < v->length)
         v->array[i] = d;
 }
 
-void rm(Vector *v, const int i) {
+void rm(Vector *v, int i) {
     if (i >= 0 && i < v->length) {
         for (int j=i; j<v->length-1; j++)
             v->array[j] = v->array[j+1];
@@ -37,7 +37,7 @@ void rm(Vector *v, const int i) {
     }
 }
 
-int get(const Vector *v, const int i) {
+int get(const Vector *v, int i) {
     return v->array[i];
 }
 
@@ -46,6 +46,10 @@ void _fix(Vector *v) {
         v->allocated += EXTRA_SIZE;
         v->array = (int*) realloc(v->array, sizeof(int)*v->allocated);
     }
+}
+
+void insert(Vector *v, int i, int d) {
+
 }
 
 void push(Vector *v, const int d) {
