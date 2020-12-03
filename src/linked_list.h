@@ -1,6 +1,7 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct s_LLNode {
@@ -27,6 +28,12 @@ void add_to_list(LinkedList *list, int data) {
     node = (LLNode*) malloc(sizeof(LLNode));
     node->data = (int*) malloc(sizeof(data));
     node->next = NULL;
+}
+
+void print_list(LinkedList *list) {
+    LLNode *node;
+    for (node = list->head; node != NULL; node = node->next)
+        printf("%d", node->data);
 }
 
 void _delete_node(LLNode *node) {
