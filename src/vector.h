@@ -69,9 +69,9 @@ void print_vec(const Vector *v) {
 
 void print_vec_addr(const Vector *v) {
     printf("(%lu) {\n", sizeof(int));
-    for (int i=0; i<v->length-1; i++)
+    for (int i=0; i<v->allocated-1; i++)
         printf("  %p,\n", &v->array[i]);
-    printf("  %p\n", &v->array[v->length-1]);
+    printf("  %p\n", &v->array[v->allocated-1]);
     printf("}\n");
 }
 
