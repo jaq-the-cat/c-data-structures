@@ -38,17 +38,20 @@ void add_to_c_list(CLinkedList *list, int data) {
     }
     else {
         CLLNode *head = list->tail->next;
-        list->tail->next = make_c_node(data);
+        list->tail->next= make_c_node(data);
         list->tail->next->next = head;
+        list->tail = list->tail->next;
     }
     list->len += 1;
 }
 
 void print_c_list(CLinkedList *list) {
-    if (list->len > 0) {
+    if (list->len == 1)
+        printf("{ %d }\n", *list->tail->data);
+    else if (list->len > 1) {
         CLLNode *node;
         printf("{ ");
-        for (node = list->tail; node->next != list->tail; node = node->next)
+        for (node = list->tail->next; node->next != list->tail->next; node = node->next)
             printf("%d ", *node->data);
         printf("}\n");
     }

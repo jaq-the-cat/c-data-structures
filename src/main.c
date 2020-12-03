@@ -4,6 +4,12 @@
 #include "circular_linked_list.h"
 
 void t_circular_linked_list() {
+    CLinkedList list = c_linked_list();
+    add_to_c_list(&list, 5);
+    add_to_c_list(&list, 10);
+    add_to_c_list(&list, 15);
+    /*add_to_c_list(&list, 20);*/
+    print_c_list(&list);
 }
 
 void t_binary_tree() {
@@ -57,8 +63,6 @@ void t_linked_list() {
 }
 
 int main() {
-    /*t_linked_list();*/
-    /*t_vector();*/
-    t_binary_tree();
+    t_circular_linked_list();
     return 0;
 }
