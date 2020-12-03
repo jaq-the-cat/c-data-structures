@@ -42,6 +42,24 @@ void add_to_list(LinkedList *list, int data) {
     list->len += 1;
 }
 
+void remove_first(LLNode *head) {
+
+}
+
+void remove_node(LLNode *previous) {
+}
+
+void _remove_from_list(LinkedList *list, int i, int c) {
+
+    c++;
+}
+
+void remove_from_list(LinkedList *list, int i) {
+    if (list->len == 0) return;
+    if (list->len == 1 || i == 0) remove_first(list->head);
+    else _remove_from_list(list, i, 0);
+}
+
 void print_list(LinkedList *list) {
     if (list->len > 0) {
         LLNode *node;
