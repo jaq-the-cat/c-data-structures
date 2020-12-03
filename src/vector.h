@@ -5,24 +5,21 @@
 #include <stdlib.h>
 
 typedef struct s_Vector {
-    int *first;
+    int *array;
     int length;
 } Vector;
 
-Vector vector(int length) {
+Vector vector(const int length) {
+    int a[length];
     Vector v = Vector {
-        .first = (int*) malloc(sizeof(int)),
+        .array = a,
         .length = length,
     };
-    int *e;
-    for (int i=2; i < length; i++) {
-        e = (int*) malloc(sizeof(int)*i);
-        e = 0;
-    }
     return v;
 }
 
 void set_at(Vector *v, int i, int d) {
+    *(v->array + i) = d;
 }
 
 #endif
