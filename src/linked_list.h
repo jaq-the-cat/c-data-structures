@@ -29,14 +29,16 @@ void add_to_list(LinkedList *list, int data) {
     node->next = NULL;
 }
 
-void delete_list(LinkedList *list) {
-}
-
 void _delete_node(LLNode *node) {
     if (node->next != NULL)
         _delete_node(node->next);
     free(node->data);
     free(node);
+}
+
+void delete_list(LinkedList *list) {
+    _delete_node(list->head);
+    list->len = 0;
 }
 
 #endif
