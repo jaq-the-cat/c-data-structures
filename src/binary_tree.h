@@ -35,15 +35,6 @@ void add_to_tree(BinaryTree *tree, int data) {
     }
 }
 
-void remove_all(BinaryTree *tree, int data) {
-    if (data == tree->data) {
-    }
-    if (tree->left != NULL)
-        remove_all(tree->left, data);
-    if (tree->right != NULL)
-        remove_all(tree->right, data);
-}
-
 void print_tree(BinaryTree *tree) {
     printf("%d[", tree->data);
     if (tree->left != NULL) {
