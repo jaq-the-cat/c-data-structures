@@ -18,8 +18,12 @@ Vector vector(const int length) {
     return v;
 }
 
-void set_at(Vector *v, int i, int d) {
+void set_at(Vector *v, const int i, const int d) {
     *(v->array + i) = d;
+}
+
+void print_vec(const Vector *v) {
+
 }
 
 #endif
