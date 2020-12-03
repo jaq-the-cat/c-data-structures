@@ -16,7 +16,7 @@ typedef struct s_Vector {
 
 Vector vector(const int initial_length) {
     int *a = (int*) malloc(sizeof(int)*initial_length);
-    Vector v = Vector {
+    Vector v = {
         .array = a,
         .length = 0,
         .allocated = initial_length,
@@ -52,6 +52,7 @@ void _fix(Vector *v) {
 }
 
 void push(Vector *v, const int d) {
+    _fix(v);
     v->array[v->length] = d;
     v->length++;
     _fix(v);
