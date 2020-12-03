@@ -19,6 +19,11 @@ int main() {
     print_list(&list);
 
     printf("----------------\n");
+
+    remove_from_list(&list, 1);
+    print_list(&list);
+
+    printf("----------------\n");
     delete_list(&list);
     return 0;
 }
