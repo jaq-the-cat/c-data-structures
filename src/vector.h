@@ -10,11 +10,13 @@ typedef struct s_Vector {
 } Vector;
 
 Vector vector(const int length) {
-    int a[length];
+    int *a = (int*) malloc(sizeof(int)*length);
     Vector v = Vector {
         .array = a,
         .length = length,
     };
+    for (int i=0; i<length; i++)
+        v.array[i] = 0;
     return v;
 }
 
