@@ -66,4 +66,8 @@ void print_vec(const Vector *v) {
     printf(" }\n");
 }
 
+void delete_vec(Vector *v) {
+    free(v->array);
+}
+
 #endif
