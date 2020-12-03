@@ -54,24 +54,30 @@ void insert(Vector *v, int i, int d) {
 
 void push(Vector *v, int d) {
     _fix(v);
+
     v->array[v->length] = d;
     v->length++;
+
     _fix(v);
 }
 
 void print_vec(const Vector *v) {
     printf("{ ");
+
     for (int i=0; i<v->length-1; i++)
         printf("%d, ", v->array[i]);
     printf("%d", v->array[v->length-1]);
+
     printf(" }\n");
 }
 
 void print_vec_addr(const Vector *v) {
     printf("(%lu) {\n", sizeof(int));
+
     for (int i=0; i<v->allocated-1; i++)
         printf("  %p,\n", &v->array[i]);
     printf("  %p\n", &v->array[v->allocated-1]);
+
     printf("}\n");
 }
 
