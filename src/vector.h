@@ -14,9 +14,8 @@ Vector vector(int length) {
         .first = (int*) malloc(sizeof(int)),
         .length = length,
     };
-    for (int i=2; i < length; i++) {
+    for (int i=2; i < length; i++)
         malloc(sizeof(int)*i);
-    }
     return v;
 }
 
