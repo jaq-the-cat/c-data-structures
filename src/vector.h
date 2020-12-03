@@ -37,7 +37,7 @@ void rm(Vector *v, const int i) {
     }
 }
 
-int get(Vector *v, const int i) {
+int get(const Vector *v, const int i) {
     return v->array[i];
 }
 
