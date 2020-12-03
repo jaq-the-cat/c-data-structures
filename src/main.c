@@ -5,7 +5,7 @@ void t_vector() {
     Vector v  = vector(2);
     push(&v, 0);
     rm(&v, 0);
-    for (int i=0; i<1000; i++)
+    for (int i=0; i<10; i++)
         push(&v, i);
     print_vec(&v);
     /*print_vec_addr(&v);*/
@@ -40,6 +40,6 @@ void t_linked_list() {
 }
 
 int main() {
-    t_linked_list();
+    t_vector();
     return 0;
 }
