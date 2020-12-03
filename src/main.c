@@ -6,6 +6,7 @@ void t_vector() {
     push(&v, 1);
     push(&v, 2);
     push(&v, 3);
+    push(&v, 4);
     print_vec(&v);
 }
 

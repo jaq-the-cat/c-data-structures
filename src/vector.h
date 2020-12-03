@@ -26,8 +26,14 @@ void set_at(Vector *v, const int i, const int d) {
 }
 
 void push(Vector *v, const int d) {
-    if (v->length < v->allocated)
-        v->array[v->length] = d;
+    if (v->length >= v->allocated) {
+        int *na = (int*) malloc(sizeof(int)*v->allocated+50);
+        for (int i=0; i<v->length; i++)
+            na[i] = v->array[i];
+        free(v->array);
+        v->array = na;
+    }
+    v->array[v->length] = d;
     v->length += 1;
 }
 
