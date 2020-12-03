@@ -25,14 +25,16 @@ Vector vector(const int initial_length) {
 }
 
 void set(Vector *v, const int i, const int d) {
-    if (i < v->length)
+    if (i >= 0 && i < v->length)
         v->array[i] = d;
 }
 
 void rm(Vector *v, const int i) {
-    for (int j=i; j<v->length-1; j++)
-        v->array[j] = v->array[j+1];
-    v->length--;
+    if (i >= 0 && i < v->length) {
+        for (int j=i; j<v->length-1; j++)
+            v->array[j] = v->array[j+1];
+        v->length--;
+    }
 }
 
 int get(Vector *v, const int i) {
