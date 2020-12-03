@@ -45,11 +45,6 @@ void _fix(Vector *v) {
     if (v->length >= v->allocated) {
         v->allocated += EXTRA_SIZE;
         v->array = (int*) realloc(v->array, sizeof(int)*v->allocated);
-        //int *na = (int*) malloc(sizeof(int)*v->allocated+EXTRA_SIZE);
-        //for (int i=0; i<v->length; i++)
-            //na[i] = v->array[i];
-        //free(v->array);
-        //v->array = na;
     }
 }
 
