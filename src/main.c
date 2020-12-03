@@ -1,6 +1,10 @@
 #include "linked_list.h"
+#include "vector.h"
 
-int main() {
+void t_vector() {
+}
+
+void t_linked_list() {
     LinkedList list = linked_list();
     add_to_list(&list, 5);
     add_to_list(&list, 10);
@@ -25,5 +29,8 @@ int main() {
 
     printf("----------------\n");
     delete_list(&list);
+}
+
+int main() {
     return 0;
 }
