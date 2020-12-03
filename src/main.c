@@ -2,7 +2,11 @@
 #include "vector.h"
 
 void t_vector() {
-    Vector v  = vector(10);
+    Vector v  = vector(3);
+    set_at(&v, 0, 1);
+    set_at(&v, 1, 2);
+    set_at(&v, 2, 3);
+    print_vec(&v);
 }
 
 void t_linked_list() {

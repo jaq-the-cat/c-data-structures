@@ -19,13 +19,13 @@ Vector vector(const int length) {
 }
 
 void set_at(Vector *v, const int i, const int d) {
-    *(v->array + i) = d;
+    v->array[i] = d;
 }
 
 void print_vec(const Vector *v) {
-    printf("[");
+    printf("[ ");
     for (int i=0; i<v->length; i++)
-        printf("%d ", *(v->array + i));
+        printf("%d ", v->array[i]);
     printf("]\n");
 }
 
