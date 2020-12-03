@@ -14,9 +14,15 @@ Vector vector(int length) {
         .first = (int*) malloc(sizeof(int)),
         .length = length,
     };
-    for (int i=2; i < length; i++)
-        malloc(sizeof(int)*i);
+    int *e;
+    for (int i=2; i < length; i++) {
+        e = (int*) malloc(sizeof(int)*i);
+        e = 0;
+    }
     return v;
+}
+
+void set_at(Vector *v, int i, int d) {
 }
 
 #endif
