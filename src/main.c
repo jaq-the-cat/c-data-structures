@@ -1,6 +1,10 @@
 #include "linked_list.h"
 #include "vector.h"
 #include "binary_tree.h"
+#include "circular_linked_list.h"
+
+void t_circular_linked_list() {
+}
 
 void t_binary_tree() {
     BinaryTree tree = binary_tree(50);
