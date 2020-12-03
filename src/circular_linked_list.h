@@ -10,13 +10,13 @@ typedef struct s_CLLNode {
 } CLLNode;
 
 typedef struct s_CLinkedList {
-    CLLNode *head;
+    CLLNode *tail;
     int len;
 } CLinkedList;
 
 CLinkedList c_linked_list() {
     CLinkedList list = {
-        .head = NULL,
+        .tail = NULL,
         .len = 0,
     };
     return list;
@@ -32,12 +32,14 @@ CLLNode* make_c_node(int data) {
 
 void add_to_c_list(CLinkedList *list, int data) {
     // empty list
-    if (list->len == 0)
-        list->head = make_c_node(data);
+    if (list->len == 0) {
+        list->tail = make_c_node(data);
+        list->tail->next = list->tail;
+    }
     else {
-        CLLNode *node;
-        for (node = list->head; node->next != NULL; node = node->next); // move to last node
-        node->next = make_c_node(data);
+        CLLNode *head = list->tail->next;
+        list->tail->next = make_c_node(data);
+        list->tail->next->next = head;
     }
     list->len += 1;
 }
@@ -45,21 +47,23 @@ void add_to_c_list(CLinkedList *list, int data) {
 void print_c_list(CLinkedList *list) {
     if (list->len > 0) {
         CLLNode *node;
-        for (node = list->head; node != NULL; node = node->next)
-            printf("%d\n", *node->data);
+        printf("{ ");
+        for (node = list->tail; node->next != list->tail; node = node->next)
+            printf("%d ", *node->data);
+        printf("}\n");
     }
 }
 
-void _delete_c_node(CLLNode *node) {
-    if (node->next != NULL)
-        _delete_c_node(node->next);
+void _delete_c_node(CLinkedList *list, CLLNode *node) {
+    if (node->next != list->tail)
+        _delete_c_node(list, node->next);
     node->next = NULL;
     free(node->data);
     free(node);
 }
 
 void delete_c_list(CLinkedList *list) {
-    _delete_c_node(list->head);
+    _delete_c_node(list, list->tail);
     list->len = 0;
 }
 
