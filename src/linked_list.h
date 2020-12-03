@@ -53,11 +53,10 @@ void remove_node_after(LLNode *previous) {
 }
 
 void _remove_from_list(int len, LLNode *node, int i, int c) {
-    if (i-1 == c) {
+    if (i-1 == c)
         remove_node_after(node);
-    } else if (i < len) {
+    else if (i < len)
         _remove_from_list(len, node->next, i, c+1);
-    }
 }
 
 void remove_from_list(LinkedList *list, int i) {
