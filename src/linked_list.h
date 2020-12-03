@@ -34,8 +34,10 @@ void add_to_list(LinkedList *list, int data) {
 void print_list(LinkedList *list) {
     if (list->len > 0) {
         LLNode *node;
-        for (node = list->head; node != NULL; node = node->next)
-            printf("%d\n", *node->data);
+        for (node = list->head; node != NULL; node = node->next) {
+            printf("hello\n");
+            printf("%d\n", *(node->data));
+        }
     }
 }
 
