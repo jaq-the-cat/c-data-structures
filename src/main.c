@@ -7,5 +7,7 @@ int main() {
     add_to_list(&list, 15);
     add_to_list(&list, 20);
     print_list(&list);
+    delete_list(&list);
+    print_list(&list);
     return 0;
 }
