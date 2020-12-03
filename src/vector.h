@@ -41,7 +41,7 @@ int get(const Vector *v, const int i) {
     return v->array[i];
 }
 
-void push(Vector *v, const int d) {
+void _fix(Vector *v) {
     if (v->length >= v->allocated) {
         int *na = (int*) malloc(sizeof(int)*v->allocated+EXTRA_SIZE);
         for (int i=0; i<v->length; i++)
@@ -49,8 +49,12 @@ void push(Vector *v, const int d) {
         free(v->array);
         v->array = na;
     }
+}
+
+void push(Vector *v, const int d) {
     v->array[v->length] = d;
     v->length++;
+    _fix(v);
 }
 
 void print_vec(const Vector *v) {
