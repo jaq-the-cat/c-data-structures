@@ -23,7 +23,10 @@ void set_at(Vector *v, const int i, const int d) {
 }
 
 void print_vec(const Vector *v) {
-
+    printf("[");
+    for (int i=0; i<v->length; i++)
+        printf("%d ", *(v->array + i));
+    printf("]\n");
 }
 
 #endif
