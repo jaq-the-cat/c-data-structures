@@ -2,15 +2,11 @@
 #include "vector.h"
 
 void t_vector() {
-    Vector v  = vector(3);
+    Vector v  = vector(10);
     push(&v, 0);
+    rm(&v, 0);
     push(&v, 1);
     push(&v, 2);
-    push(&v, 3);
-    push(&v, 4);
-    push(&v, 5);
-    rm(&v, 5);
-    push(&v, 6);
     print_vec(&v);
 }
 
