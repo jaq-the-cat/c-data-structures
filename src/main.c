@@ -8,9 +8,17 @@ int main() {
     add_to_list(&list, 20);
     print_list(&list);
 
+    printf("----------------\n");
+
     remove_from_list(&list, 0);
     print_list(&list);
 
+    printf("----------------\n");
+
+    remove_from_list(&list, 2);
+    print_list(&list);
+
+    printf("----------------\n");
     delete_list(&list);
     return 0;
 }
