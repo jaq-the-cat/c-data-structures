@@ -33,8 +33,11 @@ void add_to_list(LinkedList *list, int data) {
     // empty list
     if (list->len == 0)
         list->head = make_node(data);
-    LLNode *node;
-    for (node = list->head; node->next != NULL; node = node->next) // move to last node
+    else {
+        LLNode *node;
+        for (node = list->head; node->next != NULL; node = node->next); // move to last node
+        node->next = make_node(data);
+    }
     list->len += 1;
 }
 
