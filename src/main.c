@@ -3,7 +3,14 @@
 #include "binary_tree.h"
 
 void t_binary_tree() {
-
+    BinaryTree tree = binary_tree(50);
+    add_to_tree(&tree, 30);
+    add_to_tree(&tree, 20);
+    add_to_tree(&tree, 40);
+    add_to_tree(&tree, 90);
+    add_to_tree(&tree, 60);
+    add_to_tree(&tree, 120);
+    print_tree(&tree);
 }
 
 void t_vector() {

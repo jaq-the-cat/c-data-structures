@@ -35,4 +35,18 @@ void add_to_tree(BinaryTree *tree, int data) {
     }
 }
 
+void print_tree(BinaryTree *tree) {
+    printf("%d[", tree->data);
+    if (tree->left != NULL) {
+        printf(" ");
+        print_tree(tree->left);
+        printf(", ");
+    }
+    if (tree->right != NULL) {
+        print_tree(tree->right);
+        printf(" ");
+    }
+    printf("]");
+}
+
 #endif
