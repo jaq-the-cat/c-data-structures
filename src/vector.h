@@ -4,6 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef EXTRA_SIZE
+#define EXTRA_SIZE 50
+#endif
+
 typedef struct s_Vector {
     int *array;
     int length;
@@ -27,7 +31,7 @@ void set_at(Vector *v, const int i, const int d) {
 
 void push(Vector *v, const int d) {
     if (v->length >= v->allocated) {
-        int *na = (int*) malloc(sizeof(int)*v->allocated+50);
+        int *na = (int*) malloc(sizeof(int)*v->allocated+EXTRA_SIZE);
         for (int i=0; i<v->length; i++)
             na[i] = v->array[i];
         free(v->array);
