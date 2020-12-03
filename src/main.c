@@ -1,5 +1,10 @@
 #include "linked_list.h"
 #include "vector.h"
+#include "binary_tree.h"
+
+void t_binary_tree() {
+
+}
 
 void t_vector() {
     Vector v  = vector(2);
@@ -41,7 +46,8 @@ void t_linked_list() {
 }
 
 int main() {
-    t_vector();
-    t_linked_list();
+    /*t_linked_list();*/
+    /*t_vector();*/
+    t_binary_tree();
     return 0;
 }
