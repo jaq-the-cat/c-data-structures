@@ -45,11 +45,11 @@ void add_to_c_list(CLinkedList *list, int data) {
     list->len += 1;
 }
 
-void _remove_c_node_after(CLinkedList *list, int i) {
-}
-
 void remove_from_c_list(CLinkedList *list, int i) {
-
+    CLLNode *node = list->tail->next;
+    for (int c=0; c<i; c++, node = node->next); // move to correct index
+    free(node->next->data);
+    node->next = node->next->next;
 }
 
 void print_c_list(CLinkedList *list) {
