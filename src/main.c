@@ -6,6 +6,8 @@
 #include "headers/generic_vector.h"
 
 void t_g_vector() {
+    GVector v = gvector(10, sizeof(double));
+    delete_gvec(&v);
 }
 
 void t_doubly_linked_list() {
@@ -94,6 +96,6 @@ void t_linked_list() {
 }
 
 int main() {
-    t_vector();
+    t_g_vector();
     return 0;
 }
