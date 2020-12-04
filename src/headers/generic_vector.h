@@ -43,9 +43,9 @@ void gpush(GVector *v, void *d) {
 
 void delete_gvec(GVector *v) {
     for (int i=0; i<v->length; i++)
-        printf("freeing %p\n", pointer_to(v, i));
-        //free(*pointer_to(v, i));
-    //free(v->array);
+        //printf("freeing %p\n", *pointer_to(v, i));
+        free(*pointer_to(v, i));
+    free(v->array);
 }
 
 // TESTS
@@ -61,7 +61,7 @@ void test_g_vector_print_double(GVector *v) {
     double **ptr;
     for (int i=0; i<v->length-1; i++) {
         ptr = (double**) pointer_to(v, i);
-        printf("%p (", ptr);
+        printf("%p (", *ptr);
         printf("%lf", **ptr);
         printf("), ");
     }
