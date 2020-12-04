@@ -11,6 +11,7 @@ void t_g_vector() {
     gpush(&v, test_g_vector_double(2.104));
     gpush(&v, test_g_vector_double(123.213));
     gpush(&v, test_g_vector_double(9.312));
+    test_g_vector_print_double(&v);
     delete_gvec(&v);
 }
 
