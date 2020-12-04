@@ -54,12 +54,9 @@ void test_g_vector_print_double(GVector *v) {
     printf("{ ");
     //double **ptr;
     for (int i=0; i<v->length-1; i++) {
-        //ptr = (double**) pointer_to(v, i);
-        //printf("%lf", **ptr);
+        printf("%lf ", *(double*) (v->array[i]));
     }
-    //ptr = (double**) pointer_to(v, v->length-1);
-    //printf("%lf", **ptr);
-
+    printf("%lf", *(double*) (v->array[v->length-1]));
     printf(" }\n");
 }
 
