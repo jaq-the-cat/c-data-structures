@@ -49,6 +49,7 @@ void _fix(Vector *v) {
 }
 
 void insert(Vector *v, int i, int d) {
+    if (0 > i || v->length < i) return;
     if (v->length+1 > v->allocated)
         reallocate(v);
     for (int j=v->length; j>=i; j--)

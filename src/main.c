@@ -55,15 +55,16 @@ void t_binary_tree() {
 }
 
 void t_vector() {
-    Vector v  = vector(2);
+    Vector v  = vector(3);
     push(&v, 0);
     rm(&v, 0);
     for (int i=0; i<10; i++)
         push(&v, i);
     print_vec(&v);
-    /*print_vec_addr(&v);*/
-    free(v.array);
-    /*delete_vec(&v);*/
+    insert(&v, 12, -1);
+    insert(&v, -5, -1);
+    print_vec(&v);
+    delete_vec(&v);
 }
 
 void t_linked_list() {
@@ -90,6 +91,6 @@ void t_linked_list() {
 }
 
 int main() {
-    t_circular_linked_list();
+    t_vector();
     return 0;
 }
