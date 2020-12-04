@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 #define GENERIC_PTR_FUNC(TYPE) \
-    void* generic_ptr(TYPE value) {\
+    void* generic_ptr_##TYPE(TYPE value) {\
         TYPE *ptr = (TYPE*) malloc(sizeof(TYPE));\
         *ptr = value;\
         return (void*) ptr;\
