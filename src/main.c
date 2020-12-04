@@ -7,10 +7,10 @@
 
 void t_g_vector() {
     GVector v = gvector(10, sizeof(double));
-    gpush(&v, (void*) test_g_vector_double(5.235));
-    gpush(&v, (void*) test_g_vector_double(2.104));
-    gpush(&v, (void*) test_g_vector_double(123.213));
-    gpush(&v, (void*) test_g_vector_double(9.312));
+    gpush(&v, test_g_vector_double(5.235));
+    gpush(&v, test_g_vector_double(2.104));
+    gpush(&v, test_g_vector_double(123.213));
+    gpush(&v, test_g_vector_double(9.312));
     delete_gvec(&v);
 }
 
