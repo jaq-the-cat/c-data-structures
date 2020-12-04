@@ -3,6 +3,10 @@
 #include "headers/binary_tree.h"
 #include "headers/circular_linked_list.h"
 #include "headers/doubly_linked_list.h"
+#include "headers/generic_vector.h"
+
+void t_g_vector() {
+}
 
 void t_doubly_linked_list() {
     DLinkedList list = d_linked_list();
