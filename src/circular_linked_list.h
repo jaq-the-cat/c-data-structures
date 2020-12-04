@@ -49,10 +49,12 @@ void print_c_list(CLinkedList *list) {
     if (list->len == 1)
         printf("{ %d }\n", *list->tail->data);
     else if (list->len > 1) {
-        CLLNode *node;
+        CLLNode *node = list->tail->next;
         printf("{ ");
-        for (node = list->tail->next; node->next != list->tail->next; node = node->next)
+        do {
             printf("%d ", *node->data);
+            node = node->next;
+        } while (node != list->tail->next);
         printf("}\n");
     }
 }
