@@ -63,7 +63,7 @@ void print_c_list(CLinkedList *list) {
             printf("%d -> ", *node->data);
             node = node->next;
         } while (node != list->tail->next);
-        printf("... }\n");
+        printf("(%d)  }\n", *list->tail->next->data);
     }
 }
 
