@@ -41,4 +41,16 @@ void add_to_d_list(DLinkedList *list, int data) {
     }
 }
 
+void print_d_list(DLinkedList *list) {
+    if (list->len > 0) {
+        DLLNode *node;
+        printf("{ ");
+        for (node = list->head; node->next != NULL; node = node->next)
+            printf("%d <-> ", node->data);
+        printf("%d }\n", node->data);
+    } else {
+        printf("{}\n");
+    }
+}
+
 #endif
