@@ -61,8 +61,7 @@ void t_vector() {
     for (int i=0; i<10; i++)
         push(&v, i);
     print_vec(&v);
-    insert(&v, 12, -1);
-    insert(&v, -5, -1);
+    insert(&v, 2, -1);
     print_vec(&v);
     delete_vec(&v);
 }
