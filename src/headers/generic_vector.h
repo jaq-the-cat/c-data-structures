@@ -12,6 +12,7 @@ typedef struct {
 } GVector;
 
 void* pointer_to(GVector *v, int i) {
+    printf("v->array + %d * %d\n", i, v->data_size);
     void *ptr = (void*) ((char*) (v->array) + i * v->data_size);
     return ptr;
 }
@@ -19,6 +20,7 @@ void* pointer_to(GVector *v, int i) {
 GVector gvector(const int initial_length, int data_size) {
     return (GVector) {
         .array = (void**) malloc(data_size*initial_length),
+        .data_size = data_size,
         .length = 0,
         .allocated = initial_length,
     };
@@ -26,7 +28,7 @@ GVector gvector(const int initial_length, int data_size) {
 
 void greallocate(GVector *v) {
     v->allocated *= 1.5;
-    v->array = (void**) realloc(v->array, sizeof(int)*v->allocated);
+    v->array = (void**) realloc(v->array, v->data_size*v->allocated);
 
 }
 
@@ -38,6 +40,7 @@ void _g_fix(GVector *v) {
 void gpush(GVector *v, void *d) {
     _g_fix(v);
     void *ptr = pointer_to(v, v->length);
+    printf("%p\n", ptr);
     ptr = d;
     v->length++;
     _g_fix(v);
