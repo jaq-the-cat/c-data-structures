@@ -51,6 +51,11 @@ void _fix(Vector *v) {
 void insert(Vector *v, int i, int d) {
     if (v->length+1 > v->allocated)
         reallocate(v);
+    for (int j=v->length; j>=i; j--)
+        v->array[j] = v->array[j-1];
+    v->array[i] = d;
+    v->length++;
+
 }
 
 void push(Vector *v, int d) {
