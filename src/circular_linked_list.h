@@ -45,6 +45,13 @@ void add_to_c_list(CLinkedList *list, int data) {
     list->len += 1;
 }
 
+void _remove_c_node_after(CLinkedList *list, int i) {
+}
+
+void remove_from_c_list(CLinkedList *list, int i) {
+
+}
+
 void print_c_list(CLinkedList *list) {
     if (list->len == 1)
         printf("{ %d }\n", *list->tail->data);
