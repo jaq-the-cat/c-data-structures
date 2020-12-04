@@ -12,7 +12,7 @@ typedef struct {
 } GVector;
 
 void* pointer_to(GVector *v, int i) {
-    void *ptr = (void*) ((char*) v->array + v->length * v->data_size);
+    void *ptr = (void*) ((char*) (v->array) + i * v->data_size);
     return ptr;
 }
 
@@ -58,12 +58,13 @@ void* test_g_vector_double(double d) {
 void test_g_vector_print_double(GVector *v) {
     printf("{ ");
     double *ptr;
-
     for (int i=0; i<v->length-1; i++) {
         ptr = (double*) pointer_to(v, i);
+        //printf("%p, ", ptr);
         printf("%lf, ", *ptr);
     }
     ptr = (double*) pointer_to(v, v->length-1);
+    //printf("%p, ", ptr);
     printf("%lf", *ptr);
 
     printf(" }\n");
