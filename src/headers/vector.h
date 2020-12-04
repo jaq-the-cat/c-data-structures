@@ -37,15 +37,20 @@ int get(const Vector *v, int i) {
     return v->array[i];
 }
 
+void reallocate(Vector *v) {
+    v->allocated *= 1.5;
+    v->array = (int*) realloc(v->array, sizeof(int)*v->allocated);
+
+}
+
 void _fix(Vector *v) {
-    if (v->length >= v->allocated) {
-        v->allocated *= 1.5;
-        v->array = (int*) realloc(v->array, sizeof(int)*v->allocated);
-    }
+    if (v->length >= v->allocated)
+        reallocate(v);
 }
 
 void insert(Vector *v, int i, int d) {
-    int am = v->length-i-1; // get amount of items in front of index
+    if (v->length+1 > v->allocated)
+        reallocate(v);
 }
 
 void push(Vector *v, int d) {
