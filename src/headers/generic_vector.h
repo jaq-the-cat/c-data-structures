@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+double* test_g_vector_double(double d) {
+    double *dptr = (double*) malloc(sizeof(double));
+    *dptr = d;
+    return dptr;
+}
+
 typedef struct {
     void **array;
     int data_size;
