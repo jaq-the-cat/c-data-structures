@@ -39,7 +39,7 @@ void add_to_list(LinkedList *list, int data) {
         for (node = list->head; node->next != NULL; node = node->next); // move to last node
         node->next = make_node(data);
     }
-    list->len += 1;
+    list->len++;
 }
 
 void remove_first(LinkedList *list) {
@@ -63,6 +63,7 @@ void remove_from_list(LinkedList *list, int i) {
     if (list->len == 0) return;
     if (list->len == 1 || i == 0) remove_first(list);
     else _remove_from_list(list->len, list->head, i, 0);
+    list->len--;
 }
 
 void print_list(LinkedList *list) {
