@@ -19,4 +19,24 @@ GVector gvector(const int initial_length, int data_size) {
     };
 }
 
+void greallocate(GVector *v) {
+    v->allocated *= 1.5;
+    v->array = (int*) realloc(v->array, sizeof(int)*v->allocated);
+
+}
+
+void _g_fix(GVector *v) {
+    if (v->length >= v->allocated)
+        greallocate(v);
+}
+
+void push(GVector *v, void *d) {
+    _g_fix(v);
+    char *arr = (char*) v->array;
+    arr = arr + v->length * v->data_size;
+    arr = (char*) d;
+    v->length++;
+    _g_fix(v);
+}
+
 #endif
