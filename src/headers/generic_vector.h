@@ -38,7 +38,7 @@ void _g_fix(GVector *v) {
 void gpush(GVector *v, void *d) {
     _g_fix(v);
     void *ptr = pointer_to(v, v->length);
-    ptr = (char*) d;
+    ptr = d;
     v->length++;
     _g_fix(v);
 }
