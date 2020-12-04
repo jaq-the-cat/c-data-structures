@@ -5,7 +5,22 @@
 #include "doubly_linked_list.h"
 
 void t_doubly_linked_list() {
+    DLinkedList list = d_linked_list();
+    print_d_list(&list);
 
+    add_to_d_list(&list, 5);
+    print_d_list(&list);
+
+    add_to_d_list(&list, 10);
+    print_d_list(&list);
+
+    add_to_d_list(&list, 15);
+    print_d_list(&list);
+
+    add_to_d_list(&list, 20);
+    print_d_list(&list);
+
+    delete_d_list(&list);
 }
 
 void t_circular_linked_list() {
@@ -25,8 +40,6 @@ void t_circular_linked_list() {
     print_c_list(&list);
 
     remove_from_c_list(&list, 4);
-    print_c_list(&list);
-
     delete_c_list(&list);
 }
 
@@ -77,6 +90,6 @@ void t_linked_list() {
 }
 
 int main() {
-    t_linked_list();
+    t_doubly_linked_list();
     return 0;
 }
