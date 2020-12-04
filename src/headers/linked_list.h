@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 typedef struct s_LLNode {
-    int *data;
+    int data;
     struct s_LLNode *next;
 } LLNode;
 
@@ -24,8 +24,7 @@ LinkedList linked_list() {
 
 LLNode* make_node(int data) {
     LLNode *node = (LLNode*) malloc(sizeof(LLNode));
-    node->data = (int*) malloc(sizeof(int));
-    *(node->data) = data;
+    node->data = data;
     node->next = NULL;
     return node;
 }
@@ -43,18 +42,20 @@ void add_to_list(LinkedList *list, int data) {
 }
 
 void remove_only(LinkedList *list) {
-    free(list->head->data);
+    free(list->head);
     list->head = NULL;
 }
 
 void remove_first(LinkedList *list) {
-    free(list->head->data);
-    list->head = list->head->next;
+    LLNode *next = list->head->next;
+    free(list->head);
+    list->head = next;
 }
 
 void remove_node_after(LLNode *previous) {
-    free(previous->next->data);
-    previous->next = previous->next->next;
+    LLNode *next = previous->next->next;
+    free(previous->next);
+    previous->next = next;
 }
 
 void _remove_from_list(int len, LLNode *node, int i, int c) {
@@ -77,8 +78,8 @@ void print_list(LinkedList *list) {
         LLNode *node;
         printf("{ ");
         for (node = list->head; node->next != NULL; node = node->next)
-            printf("%d -> ", *node->data);
-        printf("%d }\n", *node->data);
+            printf("%d -> ", node->data);
+        printf("%d }\n", node->data);
     } else {
         printf("{}\n");
     }
@@ -87,7 +88,6 @@ void print_list(LinkedList *list) {
 void _delete_node(LLNode *node) {
     if (node->next != NULL)
         _delete_node(node->next);
-    free(node->data);
     free(node);
 }
 
