@@ -3,7 +3,7 @@
 #include "headers/binary_tree.h"
 #include "headers/circular_linked_list.h"
 #include "headers/doubly_linked_list.h"
-#include "headers/generic_vector.h"
+#include "headers/generic_vector_new.h"
 
 void t_g_vector() {
     GVector v = gvector(10);
