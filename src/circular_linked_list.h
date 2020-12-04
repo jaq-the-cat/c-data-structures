@@ -54,9 +54,7 @@ void remove_from_c_list(CLinkedList *list, int i) {
 }
 
 void print_c_list(CLinkedList *list) {
-    if (list->len == 1)
-        printf("{ %d }\n", *list->tail->data);
-    else if (list->len > 1) {
+    if (list->len > 0) {
         CLLNode *node = list->tail->next;
         printf("{ ");
         do {
@@ -64,6 +62,8 @@ void print_c_list(CLinkedList *list) {
             node = node->next;
         } while (node != list->tail->next);
         printf("(%d)  }\n", *list->tail->next->data);
+    } else {
+        printf("{}\n");
     }
 }
 

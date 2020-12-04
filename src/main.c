@@ -5,7 +5,11 @@
 
 void t_circular_linked_list() {
     CLinkedList list = c_linked_list();
+    print_c_list(&list);
+
     add_to_c_list(&list, 5);
+    print_c_list(&list);
+
     add_to_c_list(&list, 10);
     add_to_c_list(&list, 15);
     add_to_c_list(&list, 20);
