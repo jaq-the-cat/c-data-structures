@@ -52,9 +52,8 @@ void* test_g_vector_double(double d) {
 
 void test_g_vector_print_double(GVector *v) {
     printf("{ ");
-    for (int i=0; i<v->length-1; i++) {
+    for (int i=0; i<v->length-1; i++)
         printf("%lf ", *(double*) (v->array[i]));
-    }
     printf("%lf", *(double*) (v->array[v->length-1]));
     printf(" }\n");
 }
