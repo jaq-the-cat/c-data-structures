@@ -5,12 +5,14 @@
 #include "headers/doubly_linked_list.h"
 #include "headers/generic_vector_new.h"
 
+GENERIC_PTR_FUNC(double);
+
 void t_g_vector() {
     GVector v = gvector(10);
-    gpush(&v, test_g_vector_double(2.104));
-    gpush(&v, test_g_vector_double(5.235));
-    gpush(&v, test_g_vector_double(123.213));
-    gpush(&v, test_g_vector_double(9.312));
+    gpush(&v, generic_ptr(2.104));
+    gpush(&v, generic_ptr(5.235));
+    gpush(&v, generic_ptr(123.213));
+    gpush(&v, generic_ptr(9.312));
     test_g_vector_print_double(&v);
     delete_gvec(&v);
 }
