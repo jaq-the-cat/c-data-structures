@@ -56,6 +56,7 @@ void print_d_list(DLinkedList *list) {
 void _delete_node(DLLNode *node) {
     if (node->next != NULL)
         _delete_node(node->next);
+    node->next = NULL;
     free(node);
 }
 
