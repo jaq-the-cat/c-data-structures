@@ -12,7 +12,7 @@ typedef struct {
 
 GVector gvector(const int initial_length) {
     return (GVector) {
-        .array = (void**) malloc(sizeof(size_t)*initial_length),
+        .array = (void**) malloc(sizeof(void*)*initial_length),
         .length = 0,
         .allocated = initial_length,
     };
@@ -20,7 +20,7 @@ GVector gvector(const int initial_length) {
 
 void greallocate(GVector *v) {
     v->allocated *= 1.5;
-    v->array = (void**) realloc(v->array, sizeof(size_t)*v->allocated);
+    v->array = (void**) realloc(v->array, sizeof(void*)*v->allocated);
 
 }
 
@@ -40,7 +40,7 @@ void gpush(GVector *v, void *d) {
 void delete_gvec(GVector *v) {
     //for (int i=1; i<v->length; i++)
         //free(*pointer_to(v, i));
-    //free(v->array);
+    free(v->array);
 }
 
 // TESTS
