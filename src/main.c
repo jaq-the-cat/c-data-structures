@@ -6,7 +6,7 @@
 #include "headers/generic_vector.h"
 
 void t_g_vector() {
-    GVector v = gvector(10, sizeof(double));
+    GVector v = gvector(10);
     gpush(&v, test_g_vector_double(5.235));
     gpush(&v, test_g_vector_double(2.104));
     gpush(&v, test_g_vector_double(123.213));
