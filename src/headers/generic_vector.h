@@ -39,4 +39,8 @@ void push(GVector *v, void *d) {
     _g_fix(v);
 }
 
+void delete_gvec(GVector *v) {
+    free(v->array);
+}
+
 #endif
