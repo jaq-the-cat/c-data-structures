@@ -45,7 +45,7 @@ void _fix(Vector *v) {
 }
 
 void insert(Vector *v, int i, int d) {
-
+    int am = v->length-i-1; // get amount of items in front of index
 }
 
 void push(Vector *v, int d) {
