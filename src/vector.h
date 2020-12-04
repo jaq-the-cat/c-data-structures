@@ -4,10 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifndef EXTRA_SIZE
-#define EXTRA_SIZE 50
-#endif
-
 typedef struct s_Vector {
     int *array;
     int length;
@@ -43,7 +39,7 @@ int get(const Vector *v, int i) {
 
 void _fix(Vector *v) {
     if (v->length >= v->allocated) {
-        v->allocated += EXTRA_SIZE;
+        v->allocated *= 1.5;
         v->array = (int*) realloc(v->array, sizeof(int)*v->allocated);
     }
 }
