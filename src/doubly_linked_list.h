@@ -35,6 +35,9 @@ void add_to_d_list(DLinkedList *list, int data) {
     if (list->len == 0)
         list->head = make_d_node(NULL, data);
     else {
+        DLLNode *node;
+        for (node = list->head; node->next != NULL; node = node->next); // move to last node
+        node->next = make_d_node(node, data);
     }
 }
 
