@@ -56,26 +56,19 @@ void t_linked_list() {
     add_to_list(&list, 20);
     print_list(&list);
 
-    printf("----------------\n");
-
     remove_from_list(&list, 0);
     print_list(&list);
-
-    printf("----------------\n");
 
     remove_from_list(&list, 2);
     print_list(&list);
 
-    printf("----------------\n");
-
     remove_from_list(&list, 1);
     print_list(&list);
 
-    printf("----------------\n");
     delete_list(&list);
 }
 
 int main() {
-    t_circular_linked_list();
+    t_linked_list();
     return 0;
 }

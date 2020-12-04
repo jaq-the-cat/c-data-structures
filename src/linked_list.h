@@ -68,8 +68,10 @@ void remove_from_list(LinkedList *list, int i) {
 void print_list(LinkedList *list) {
     if (list->len > 0) {
         LLNode *node;
-        for (node = list->head; node != NULL; node = node->next)
-            printf("%d\n", *node->data);
+        printf("{ ");
+        for (node = list->head; node->next != NULL; node = node->next)
+            printf("%d -> ", *node->data);
+        printf("%d }\n", *node->data);
     }
 }
 
