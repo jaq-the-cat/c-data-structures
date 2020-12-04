@@ -5,7 +5,7 @@
 #include "headers/doubly_linked_list.h"
 #include "headers/generic_vector_new.h"
 
-GENERIC_PTR_FUNC(double);
+GENERIC_VEC_INIT(double);
 
 void t_g_vector() {
     GVector v = gvector(10);

@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define GENERIC_PTR_FUNC(TYPE) \
+#define GENERIC_VEC_INIT(TYPE) \
     void* generic_ptr_##TYPE(TYPE value) {\
         TYPE *ptr = (TYPE*) malloc(sizeof(TYPE));\
         *ptr = value;\
