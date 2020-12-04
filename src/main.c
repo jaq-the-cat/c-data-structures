@@ -11,7 +11,7 @@ void t_circular_linked_list() {
     add_to_c_list(&list, 20);
     print_c_list(&list);
 
-    remove_from_c_list(&list, 10);
+    remove_from_c_list(&list, 4);
     print_c_list(&list);
 
     delete_c_list(&list);
