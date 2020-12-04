@@ -12,8 +12,7 @@ typedef struct {
 } GVector;
 
 void* pointer_to(GVector *v, int i) {
-    void *ptr = (void*) ((char*) (v->array) + i * v->data_size);
-    return ptr;
+    return (void*) ((char*) (v->array) + i * v->data_size);
 }
 
 GVector gvector(const int initial_length, int data_size) {
