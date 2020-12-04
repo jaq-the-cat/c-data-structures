@@ -1,8 +1,8 @@
-#include "linked_list.h"
-#include "vector.h"
-#include "binary_tree.h"
-#include "circular_linked_list.h"
-#include "doubly_linked_list.h"
+#include "headers/linked_list.h"
+#include "headers/vector.h"
+#include "headers/binary_tree.h"
+#include "headers/circular_linked_list.h"
+#include "headers/doubly_linked_list.h"
 
 void t_doubly_linked_list() {
     DLinkedList list = d_linked_list();
