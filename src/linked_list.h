@@ -42,6 +42,11 @@ void add_to_list(LinkedList *list, int data) {
     list->len++;
 }
 
+void remove_only(LinkedList *list) {
+    free(list->head->data);
+    list->head = NULL;
+}
+
 void remove_first(LinkedList *list) {
     free(list->head->data);
     list->head = list->head->next;
@@ -61,7 +66,8 @@ void _remove_from_list(int len, LLNode *node, int i, int c) {
 
 void remove_from_list(LinkedList *list, int i) {
     if (list->len == 0) return;
-    if (list->len == 1 || i == 0) remove_first(list);
+    if (list->len == 1) remove_only(list);
+    else if (i == 0) remove_first(list);
     else _remove_from_list(list->len, list->head, i, 0);
     list->len--;
 }
@@ -73,6 +79,8 @@ void print_list(LinkedList *list) {
         for (node = list->head; node->next != NULL; node = node->next)
             printf("%d -> ", *node->data);
         printf("%d }\n", *node->data);
+    } else {
+        printf("{}\n");
     }
 }
 
@@ -84,8 +92,10 @@ void _delete_node(LLNode *node) {
 }
 
 void delete_list(LinkedList *list) {
-    _delete_node(list->head);
-    list->len = 0;
+    if (list->len > 0) {
+        _delete_node(list->head);
+        list->len = 0;
+    }
 }
 
 #endif
