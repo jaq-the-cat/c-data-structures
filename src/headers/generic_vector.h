@@ -42,7 +42,7 @@ void gpush(GVector *v, void *d) {
 }
 
 void delete_gvec(GVector *v) {
-    for (int i=0; i<v->length; i++)
+    for (int i=1; i<v->length; i++)
         //printf("freeing %p\n", *pointer_to(v, i));
         free(*pointer_to(v, i));
     free(v->array);
