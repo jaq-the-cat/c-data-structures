@@ -7,6 +7,9 @@
 
 void t_g_vector() {
     GVector v = gvector(10, sizeof(double));
+    double *d = (double*) malloc(sizeof(double));
+    *d = 5.832;
+    gpush(&v, (void*) d);
     delete_gvec(&v);
 }
 
