@@ -53,16 +53,16 @@ void print_d_list(DLinkedList *list) {
     }
 }
 
-void _delete_node(DLLNode *node) {
+void _delete_d_node(DLLNode *node) {
     if (node->next != NULL)
-        _delete_node(node->next);
+        _delete_d_node(node->next);
     node->next = NULL;
     free(node);
 }
 
-void delete_list(DLinkedList *list) {
+void delete_d_list(DLinkedList *list) {
     if (list->len > 0) {
-        _delete_node(list->head);
+        _delete_d_node(list->head);
         list->len = 0;
     }
 }

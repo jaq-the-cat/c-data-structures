@@ -2,6 +2,11 @@
 #include "vector.h"
 #include "binary_tree.h"
 #include "circular_linked_list.h"
+#include "doubly_linked_list.h"
+
+void t_doubly_linked_list() {
+
+}
 
 void t_circular_linked_list() {
     CLinkedList list = c_linked_list();
