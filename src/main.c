@@ -90,6 +90,6 @@ void t_linked_list() {
 }
 
 int main() {
-    t_doubly_linked_list();
+    t_linked_list();
     return 0;
 }
