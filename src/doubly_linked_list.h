@@ -23,4 +23,19 @@ DLinkedList d_linked_list() {
     return list;
 }
 
+DLLNode* make_d_node(DLLNode *prev, int data) {
+    DLLNode *node = (DLLNode*) malloc(sizeof(DLLNode));
+    node->data = data;
+    node->prev = prev;
+    node->next = NULL;
+    return node;
+}
+
+void add_to_d_list(DLinkedList *list, int data) {
+    if (list->len == 0)
+        list->head = make_d_node(NULL, data);
+    else {
+    }
+}
+
 #endif
