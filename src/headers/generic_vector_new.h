@@ -44,7 +44,7 @@ void gpush(GVector *v, void *d) {
 }
 
 void delete_gvec(GVector *v) {
-    for (int i=1; i<v->length; i++)
+    for (int i=0; i<v->length; i++)
         free(v->array[i]);
     free(v->array);
 }
