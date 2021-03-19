@@ -4,8 +4,22 @@
 #include "headers/circular_linked_list.h"
 #include "headers/doubly_linked_list.h"
 #include "headers/generic_vector_new.h"
+#include "headers/hashmap.h"
 
 GENERIC_VEC_INIT(double);
+
+void t_hashmap() {
+    HashMap map = hash_map(20);
+    hm_insert(&map, "Hello, world!", 10);
+    hm_insert(&map, "Hello, world!", 16);
+    /*hm_insert(&map, "Hello, world!", 11);*/
+    hm_insert(&map, "poggers", 1);
+
+    printf("%d\n", *hm_get(&map, "Hello, world!"));
+    printf("%d\n", *hm_get(&map, "poggers"));
+
+    hm_delete(&map);
+}
 
 void t_g_vector() {
     GVector v = gvector(10);
@@ -103,6 +117,6 @@ void t_linked_list() {
 }
 
 int main() {
-    t_g_vector();
+    t_hashmap();
     return 0;
 }
