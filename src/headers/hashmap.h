@@ -10,7 +10,7 @@ typedef struct s_hm_LLNode { int data; struct s_hm_LLNode *next; char key[100]; 
 typedef struct s_hm_LinkedList { hm_LLNode *head; int len; } hm_LinkedList;
 
 typedef struct HashMap {
-    hm_LinkedList *list;
+    hm_LinkedList *array;
     int allocated;
 } HashMap;
 

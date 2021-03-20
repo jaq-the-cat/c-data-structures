@@ -39,7 +39,7 @@ int hash(char str[], int seed) {
 
 HashMap hash_map(const int initial_length) {
     HashMap map = {
-        .list = (hm_LinkedList*) malloc(sizeof(hm_LinkedList)*initial_length),
+        .array = (hm_LinkedList*) malloc(sizeof(hm_LinkedList)*initial_length),
         .allocated = initial_length,
     };
     return map;
@@ -47,28 +47,28 @@ HashMap hash_map(const int initial_length) {
 
 void hm_reallocate(HashMap *map) {
     map->allocated *= 1.5;
-    map->list = (hm_LinkedList*) realloc(map->list, sizeof(hm_LinkedList) * map->allocated);
+    map->array = (hm_LinkedList*) realloc(map->array, sizeof(hm_LinkedList) * map->allocated);
 }
 
 void hm_insert(HashMap *map, char *key, int value) {
     int index = hash(key, 0) % map->allocated;
 
     // replace if present
-    for (hm_LLNode *node = map->list[index].head; node != NULL; node = node->next)
+    for (hm_LLNode *node = map->array[index].head; node != NULL; node = node->next)
         if (!strcmp(node->key, key)) {
             node->data = value;
             return;
         }
 
     // if not present, append
-    _hm_add_to_list(&map->list[index], key, value);
-    if (map->list[index].len > COLLISIONS) hm_reallocate(map);
+    _hm_add_to_list(&map->array[index], key, value);
+    if (map->array[index].len > COLLISIONS) hm_reallocate(map);
 }
 
 int* hm_get(HashMap *map, char *key) {
     int index = hash(key, 0) % map->allocated;
 
-    for (hm_LLNode *node = map->list[index].head; node != NULL; node = node->next) {
+    for (hm_LLNode *node = map->array[index].head; node != NULL; node = node->next) {
         if (!strcmp(node->key, key))
             return &node->data;
     }
@@ -76,5 +76,13 @@ int* hm_get(HashMap *map, char *key) {
 }
 
 void hm_delete(HashMap *map) {
-    free(map->list);
+    for (int i=0; i<map->allocated; i++) {
+        for (hm_LLNode *node = map->array[i].head; node != NULL;) {
+            hm_LLNode *next = node->next;
+            free(node);
+            node = next;
+        }
+    }
+    free(map->array);
+    map->array = NULL;
 }

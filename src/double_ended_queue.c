@@ -53,6 +53,3 @@ int deq_peek_end(DEQueue *q) {
     for (node = q->head; node->next != NULL; node = node->next);
     return node->data;
 }
-
-
-#endif

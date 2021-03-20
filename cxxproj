@@ -8,4 +8,3 @@ src/circular_linked_list.c
 src/generic_vector_new.c
 src/doubly_linked_list.c
 src/double_ended_queue.c
-src/generic_vector.c
