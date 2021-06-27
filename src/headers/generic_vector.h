@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define GVEC_D(v, x) gpush(&v, (gdata) {.d = x})
+#define GVEC_I(v, x) gpush(&v, (gdata) {.n = x})
+#define GVEC_L(v, x) gpush(&v, (gdata) {.l = x})
+#define GVEC_C(v, x) gpush(&v, (gdata) {.c = x})
+#define GVEC_S(v, x) gpush(&v, (gdata) {.str = x})
+
 enum data_type {
     DOUBLE,
 

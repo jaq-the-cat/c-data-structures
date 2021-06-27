@@ -21,10 +21,10 @@ void t_hashmap() {
 
 void t_g_vector() {
     GVector v = gvector(DOUBLE, 10);
-    gpush(&v, (gdata) {.d = 2.104});
-    gpush(&v, (gdata) {.d = 5.235});
-    gpush(&v, (gdata) {.d = 123.213});
-    gpush(&v, (gdata) {.d = 9.312});
+    GVEC_D(v, 2.104);
+    GVEC_D(v, 5.235);
+    GVEC_D(v, 123.213);
+    GVEC_D(v, 9.312);
     print_g_vec(&v);
     gdelete(&v);
 }
