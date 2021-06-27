@@ -3,10 +3,8 @@
 #include "headers/binary_tree.h"
 #include "headers/circular_linked_list.h"
 #include "headers/doubly_linked_list.h"
-#include "headers/generic_vector_new.h"
+#include "headers/generic_vector.h"
 #include "headers/hashmap.h"
-
-GENERIC_VEC_INIT(double);
 
 void t_hashmap() {
     HashMap map = hash_map(20);
@@ -22,13 +20,13 @@ void t_hashmap() {
 }
 
 void t_g_vector() {
-    GVector v = gvector(10);
-    gpush(&v, generic_ptr_double(2.104));
-    gpush(&v, generic_ptr_double(5.235));
-    gpush(&v, generic_ptr_double(123.213));
-    gpush(&v, generic_ptr_double(9.312));
-    test_g_vector_print_double(&v);
-    delete_gvec(&v);
+    GVector v = gvector(DOUBLE, 10);
+    gpush(&v, (gdata) {.d = 2.104});
+    gpush(&v, (gdata) {.d = 5.235});
+    gpush(&v, (gdata) {.d = 123.213});
+    gpush(&v, (gdata) {.d = 9.312});
+    print_g_vec(&v);
+    gdelete(&v);
 }
 
 void t_doubly_linked_list() {
@@ -117,6 +115,6 @@ void t_linked_list() {
 }
 
 int main() {
-    t_hashmap();
+    t_g_vector();
     return 0;
 }

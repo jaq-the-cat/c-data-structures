@@ -29,7 +29,7 @@ int get(const Vector *v, int i) {
 
 void reallocate(Vector *v) {
     v->allocated *= 1.5;
-    v->array = (int*) realloc(v->array, sizeof(int)*v->allocated);
+    v->array = realloc(v->array, sizeof(int)*v->allocated);
 
 }
 
@@ -61,9 +61,10 @@ void push(Vector *v, int d) {
 void print_vec(const Vector *v) {
     printf("{ ");
 
-    for (int i=0; i<v->length-1; i++)
+    int i=0;
+    for (i=0; i<v->length-1; i++)
         printf("%d, ", v->array[i]);
-    printf("%d", v->array[v->length-1]);
+    printf("%d", v->array[i]);
 
     printf(" }\n");
 }
