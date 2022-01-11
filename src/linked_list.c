@@ -1,4 +1,4 @@
-#include "headers/linked_list.h"
+#include "linked_list.h"
 
 LinkedList linked_list() {
     LinkedList list = {

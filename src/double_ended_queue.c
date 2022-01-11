@@ -1,4 +1,4 @@
-#include "headers/double_ended_queue.h"
+#include "double_ended_queue.h"
 
 DEQueue double_ended_queue() {
     DEQueue queue = {

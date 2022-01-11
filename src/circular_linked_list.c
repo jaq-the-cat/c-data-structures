@@ -1,4 +1,4 @@
-#include "headers/circular_linked_list.h"
+#include "circular_linked_list.h"
 
 CLinkedList c_linked_list() {
     CLinkedList list = {

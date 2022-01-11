@@ -1,10 +1,10 @@
-#include "headers/linked_list.h"
-#include "headers/vector.h"
-#include "headers/binary_tree.h"
-#include "headers/circular_linked_list.h"
-#include "headers/doubly_linked_list.h"
-#include "headers/generic_vector.h"
-#include "headers/hashmap.h"
+#include "linked_list.h"
+#include "vector.h"
+#include "binary_tree.h"
+#include "circular_linked_list.h"
+#include "doubly_linked_list.h"
+#include "generic_vector.h"
+#include "hashmap.h"
 
 void t_hashmap() {
     HashMap map = hash_map(20);

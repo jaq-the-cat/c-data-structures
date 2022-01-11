@@ -1,4 +1,4 @@
-#include "headers/doubly_linked_list.h"
+#include "doubly_linked_list.h"
 
 DLinkedList d_linked_list() {
     DLinkedList list = {

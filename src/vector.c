@@ -1,4 +1,4 @@
-#include "headers/vector.h"
+#include "vector.h"
 
 Vector vector(const int initial_length) {
     int *a = (int*) malloc(sizeof(int)*initial_length);

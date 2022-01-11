@@ -1,4 +1,4 @@
-#include "headers/generic_vector.h"
+#include "generic_vector.h"
 
 GVector gvector(enum data_type type, const int initial_length) {
     return (GVector) {

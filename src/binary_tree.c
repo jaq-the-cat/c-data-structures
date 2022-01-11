@@ -1,4 +1,4 @@
-#include "headers/binary_tree.h"
+#include "binary_tree.h"
 
 BinaryTree binary_tree(int data) {
     BinaryTree tree = {

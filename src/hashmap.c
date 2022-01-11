@@ -1,4 +1,4 @@
-#include "headers/hashmap.h"
+#include "hashmap.h"
 
 #define COLLISIONS 5
 
@@ -13,7 +13,6 @@ hm_LLNode* _hm_make_node(char *key, int data) {
 }
 
 void _hm_add_to_list(hm_LinkedList *list, char *key, int data) {
-    int a;
     if (list->len == 0)
         list->head = _hm_make_node(key, data);
     else {
